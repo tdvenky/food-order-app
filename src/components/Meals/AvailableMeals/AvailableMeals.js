@@ -42,7 +42,6 @@ const DUMMY_MEALS = [
                     price={meal.price}
                 />
     );
-    console.log(mealsList)
 
     return (
         <section className={classes.meals}>
