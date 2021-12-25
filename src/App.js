@@ -5,6 +5,8 @@ import Meals from './components/Meals/Meals/Meals';
 import Cart from './components/Cart/Cart/Cart';
 import CartProvider from './store/CartProvider';
 
+require('dotenv').config();
+
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
 
