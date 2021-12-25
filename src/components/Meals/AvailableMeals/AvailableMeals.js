@@ -10,7 +10,7 @@ import classes from './AvailableMeals.module.css'
   const AvailableMeals = () => {
     const [meals, setMeals] = useState([]);
 
-    const { get: fetchMeals} = useAxios();
+    const {isLoading, error, get: fetchMeals} = useAxios();
 
     useEffect(() => {
       const transformedMeals = (mealsObj) => {
@@ -32,6 +32,18 @@ import classes from './AvailableMeals.module.css'
         url: process.env.REACT_APP_DB_URL
       }, transformedMeals)
     }, []);
+
+    if(isLoading) {
+      return <section className={classes.MealsLoading}>
+        <p>Loading menu...</p>
+      </section>
+    }
+
+    if(error) {
+      return <section className={classes.MealsError}>
+        <p>An error occurred while loading the menu. Please refresh the page or try again later.</p>
+      </section>
+    }
 
     const mealsList = meals.map(
         meal => <MealItem 
