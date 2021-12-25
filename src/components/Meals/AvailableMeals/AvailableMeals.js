@@ -10,7 +10,7 @@ import classes from './AvailableMeals.module.css'
   const AvailableMeals = () => {
     const [meals, setMeals] = useState([]);
 
-    const {isLoading, error, get: fetchMeals} = useAxios();
+    const {isLoading, error, sendRequest: fetchMeals} = useAxios();
 
     useEffect(() => {
       const transformedMeals = (mealsObj) => {
@@ -29,7 +29,7 @@ import classes from './AvailableMeals.module.css'
       };
 
       fetchMeals({
-        url: process.env.REACT_APP_DB_URL
+        url: process.env.REACT_APP_GET_MEALS_URL
       }, transformedMeals)
     }, []);
 
