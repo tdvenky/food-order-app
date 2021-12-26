@@ -1,7 +1,7 @@
 # food-order-app
 Practice project from Udemy course - https://www.udemy.com/course/react-the-complete-guide-incl-redux/
 
-https://tdvenky-food-order-app.web.app/
+https://tdvenky-food-order-app.web.app/ (best viewed on desktop / tab / iPhone 6 and higher / Pixel)
 
 food-order-app allows users to add menu items to the cart, view the cart and place an order. An order contains menu items with user information such as name and address. After successfully placing an order, an order ID is displayed to the user.
 
